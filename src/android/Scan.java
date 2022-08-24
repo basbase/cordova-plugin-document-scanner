@@ -71,6 +71,7 @@ public class Scan extends CordovaPlugin {
                 intent.putExtra(ScanConstants.OPEN_INTENT_PREFERENCE, preference);
                 intent.putExtra("quality", this.quality);
                 intent.putExtra("uri", this.uri);
+                Log.d("BASBASE", "this.uri:"+this.uri);
                 cordova.getActivity().startActivityForResult(intent, REQUEST_CODE);
             } catch (IllegalArgumentException e) {
                 this.callbackContext.error("Illegal Argument Exception");

@@ -7,6 +7,7 @@ module.exports = {
 		options.quality = (!isNaN(options.quality) && options.quality >= 1 && options.quality <= 5) ? options.quality : 1;
 		options.returnBase64 = (typeof options.returnBase64 === "boolean") ? options.returnBase64 : false;
 		var uri = options.uri ? options.uri : "";
+		console.log("BASBASE options.uri:"+uri);
     	if((options.sourceType === 1 || options.sourceType === 0) && typeof options.fileName === "string")
     	{
 			var sourceType = options.sourceType;	// 0 Gallery, 1 Camera
