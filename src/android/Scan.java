@@ -31,6 +31,7 @@ public class Scan extends CordovaPlugin {
 
     private int srcType;
     private int quality;
+    private String uri;
     private boolean returnBase64;
 
     public CallbackContext callbackContext;
@@ -51,9 +52,10 @@ public class Scan extends CordovaPlugin {
 
             //Take the values from the arguments if they're not already defined (this is tricky)
             //[sourceType, fileName, quality, returnBase64]
-            this.srcType = args.getInt(0); 
+            this.srcType = args.getInt(0);
             this.quality = args.getInt(2);
             this.returnBase64 = args.getBoolean(3);
+            this.uri = args.getString(4);
             this.callbackContext = callbackContext;
 
             cordova.setActivityResultCallback(this);
@@ -68,6 +70,7 @@ public class Scan extends CordovaPlugin {
                 Intent intent = new Intent(cordova.getActivity().getApplicationContext(), ScanActivity.class);
                 intent.putExtra(ScanConstants.OPEN_INTENT_PREFERENCE, preference);
                 intent.putExtra("quality", this.quality);
+                intent.putExtra("uri", this.uri);
                 cordova.getActivity().startActivityForResult(intent, REQUEST_CODE);
             } catch (IllegalArgumentException e) {
                 this.callbackContext.error("Illegal Argument Exception");
@@ -132,3 +135,4 @@ public class Scan extends CordovaPlugin {
         return base64;
     }
 }
+
