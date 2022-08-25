@@ -7,5 +7,5 @@ allprojects {
 }
 
 dependencies {
-	implementation('com.github.basbase:scanlibrary:update1-SNAPSHOT') { changing = true }
+	implementation('com.github.basbase:scanlibrary:7107ed0a51264a6937ae041d751d71ca8c14f6f7')
 }
