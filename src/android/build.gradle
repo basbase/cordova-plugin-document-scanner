@@ -9,5 +9,5 @@ configurations.all {
 	resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
 dependencies {
-	implementation('com.github.basbase:scanlibrary:5b46db4251ebf2bdfe568d800b1197e724d4b644')
+	implementation('com.github.basbase:scanlibrary:ffaade78039c085fc9338de664477a7cc1619215')
 }
