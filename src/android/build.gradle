@@ -7,5 +7,5 @@ allprojects {
 }
 
 dependencies {
-	implementation 'com.github.basbase:scanlibrary:native-camera-SNAPSHOT'
+	implementation('com.github.basbase:scanlibrary:native-camera-SNAPSHOT') { changing = true }
 }
