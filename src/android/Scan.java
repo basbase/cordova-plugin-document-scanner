@@ -85,7 +85,10 @@ public class Scan extends CordovaPlugin {
                 intent.putExtra("targetWidth", this.targetWidth);
                 intent.putExtra("targetHeight", this.targetHeight);
 
-                Log.d("BASBASE", "this.uri:"+this.uri);
+                Log.d("BASBASE", "intent.putExtra this.uri:"+this.uri+" this.outputQuality:" +this.outputQuality+
+                        " this.targetWidth:" +this.targetWidth
+                        " this.targetHeight:"+ this.targetHeight
+                        );
                 cordova.getActivity().startActivityForResult(intent, REQUEST_CODE);
             } catch (IllegalArgumentException e) {
                 this.callbackContext.error("Illegal Argument Exception");
