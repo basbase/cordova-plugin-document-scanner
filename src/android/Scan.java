@@ -86,7 +86,7 @@ public class Scan extends CordovaPlugin {
                 intent.putExtra("targetHeight", this.targetHeight);
 
                 Log.d("BASBASE", "intent.putExtra this.uri:"+this.uri+" this.outputQuality:" +this.outputQuality+
-                        " this.targetWidth:" +this.targetWidth
+                        " this.targetWidth:" +this.targetWidth+
                         " this.targetHeight:"+ this.targetHeight
                         );
                 cordova.getActivity().startActivityForResult(intent, REQUEST_CODE);
