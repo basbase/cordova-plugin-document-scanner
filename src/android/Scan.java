@@ -35,6 +35,10 @@ public class Scan extends CordovaPlugin {
     private String uri;
     private boolean returnBase64;
 
+    private int outputQuality;
+    private int targetWidth;
+    private int targetHeight;
+
     public CallbackContext callbackContext;
 
     public static final int PERMISSION_DENIED_ERROR = 20;
@@ -57,6 +61,11 @@ public class Scan extends CordovaPlugin {
             this.quality = args.getInt(2);
             this.returnBase64 = args.getBoolean(3);
             this.uri = args.getString(4);
+            this.outputQuality = args.getInt(5);
+            this.targetWidth = args.getInt(6);
+            this.targetHeight = args.getInt(7);
+
+
             this.callbackContext = callbackContext;
 
             cordova.setActivityResultCallback(this);
@@ -72,6 +81,10 @@ public class Scan extends CordovaPlugin {
                 intent.putExtra(ScanConstants.OPEN_INTENT_PREFERENCE, preference);
                 intent.putExtra("quality", this.quality);
                 intent.putExtra("uri", this.uri);
+                intent.putExtra("outputQuality", this.outputQuality);
+                intent.putExtra("targetWidth", this.targetWidth);
+                intent.putExtra("targetHeight", this.targetHeight);
+
                 Log.d("BASBASE", "this.uri:"+this.uri);
                 cordova.getActivity().startActivityForResult(intent, REQUEST_CODE);
             } catch (IllegalArgumentException e) {

@@ -5,7 +5,9 @@ allprojects {
 		}
 	}
 }
-
+configurations.all {
+	resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
 dependencies {
-	implementation('com.github.basbase:scanlibrary:7107ed0a51264a6937ae041d751d71ca8c14f6f7')
+	implementation('com.github.basbase:scanlibrary:037391d06fde5877b3bc94020f3e3d67de54b945')
 }
