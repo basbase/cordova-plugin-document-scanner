@@ -16,8 +16,10 @@
                                          defaultDetectorType: IRLScannerDetectorTypePerformance
                                          withDelegate:self];
                                          
-    scanner.showControls = NO;
+    scanner.showControls = YES;
     scanner.showAutoFocusWhiteRectangle = YES;
+    scanner.contrast_type.hidden = YES;
+    scanner.detect_toggle.hidden = YES;
 
     [[self topViewController] presentViewController:scanner animated:YES completion:nil];
 }
